@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Sneakers
+class Producer
+class RunningSneakers
+class StreetSneakers
+class FootballSneakers
+
+Sneakers --|> RunningSneakers
+Sneakers --|> StreetSneakers
+Sneakers --|> FootballSneakers
+Sneakers *-- Producer : contains
+Sneakers *-- SneakersType : contains
+
+class Sneakers {
+    +String name
+    +double cost
+    +SneakersType type
+    +Producer producer
+    +GetProducerName(): String
+    +GetTypeArray(): SneakersType[]
+    +GetAllProducers(sneakers: Sneakers[]): List<String>
+    +ProducersQuantity(sneakers: Sneakers[]): int
+    +AverageProducerSum(sneakers: Sneakers[]): double[]
+    +AverageTypeSum(sneakers: Sneakers[]): double[]
+}
+
+class Producer {
+    +String name
+    +String country
+}
+
+enum SneakersType {
+    Running
+    Street
+    Football
+}
+
+@enduml
