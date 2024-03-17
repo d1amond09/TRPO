@@ -105,4 +105,12 @@ public class Sneakers {
         }
         return avgs.stream().mapToDouble(i->i).toArray();
     }
+
+    /**
+     * @return информация о кроссовках
+     */
+    @Override
+    public String toString() {
+        return producer.name + " " + name + ": " + cost;
+    }
 }
